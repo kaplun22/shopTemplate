@@ -6,6 +6,8 @@ package com.internetShopProject.domain;
 public class Good {
     private   String Name;
     private  int price;
+    private int goodID;
+
 
     public String getName() {
         return Name;
@@ -21,5 +23,13 @@ public class Good {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    public int getGoodID() {
+        return goodID;
+    }
+
+    public void setGoodID(int goodID) {
+        this.goodID = goodID;
     }
 }

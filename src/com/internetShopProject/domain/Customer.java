@@ -5,9 +5,18 @@ package com.internetShopProject.domain;
  */
 public class Customer  {
     public String Name;
-    public  String Contact;
-    public  String login;
+    public String Contact;
+    public String login;
     public String password;
+    public String eMail;
+
+    public String geteMail() {
+        return eMail;
+    }
+
+    public void seteMail(String eMail) {
+        this.eMail = eMail;
+    }
 
     public String getContact() {
         return Contact;

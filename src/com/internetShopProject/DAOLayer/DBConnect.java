@@ -11,7 +11,11 @@ import java.util.logging.Logger;
 /**
  * Created by Андрій on 02.03.2017.
  */
+
+
 public class DBConnect {
+
+
 
     private static Logger log = Logger.getLogger(DBConnect.class.getName());
 
@@ -25,6 +29,7 @@ public class DBConnect {
         Connection connection = null;
 
         try{
+            Class.forName("postgresql-42.0.0.jar");
             connection = DriverManager.getConnection(URL, login, password);
             if(connection!=null){
                 return connection;

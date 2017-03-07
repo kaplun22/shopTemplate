@@ -21,8 +21,9 @@ public class GoodDAO {
             logger.log(Level.SEVERE,"Connection isn`t succesfull");
 
         }
-        String sql = "INSERT INTO Goods(name, price) VALUES(?,?)";
+        String sql = "INSERT INTO \"Goods\" (name, price) VALUES(?,?)";
         try {
+            pr = con.prepareStatement(sql);
             pr.setString(1,name);
             pr.setInt(2,price);
             pr.executeQuery();
@@ -30,8 +31,11 @@ public class GoodDAO {
             e.printStackTrace();
         }finally{
             try {
-                pr.close();
-                con.close();
+                if(pr!=null){
+                pr.close();}
+                if(con !=null) {
+                    con.close();
+                }
             } catch (SQLException e) {
                 e.printStackTrace();
             }

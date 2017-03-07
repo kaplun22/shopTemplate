@@ -7,6 +7,7 @@ import java.sql.DriverManager;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+
 /**
  * Created by Андрій on 02.03.2017.
  */
@@ -14,7 +15,7 @@ public class DBConnect {
 
     private static Logger log = Logger.getLogger(DBConnect.class.getName());
 
-            private static final String URL="jdbc:<yourDB>://localhost:5432/SID";
+            private static final String URL="jdbc:<yourDB>://localhost:5432/Goods";
     private static final String login="postgres";
     private static final String password="1723";
 

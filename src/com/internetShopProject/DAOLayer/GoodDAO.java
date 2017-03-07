@@ -28,6 +28,14 @@ public class GoodDAO {
             pr.executeQuery();
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally{
+            try {
+                pr.close();
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
         }
 
 

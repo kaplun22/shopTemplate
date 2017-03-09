@@ -17,19 +17,17 @@ public class GoodDAO {
 
         try {
            con =  DBConnect.getConnectionToDB();
-        } catch (Exception e) {
-            logger.log(Level.SEVERE,"Connection isn`t succesfull");
 
-        }
-        String sql = "INSERT INTO \"Goods\" (name, price) VALUES(?,?)";
-        try {
+        String sql = "INSERT INTO goods (name, price) VALUES(?,?)";
             pr = con.prepareStatement(sql);
             pr.setString(1,name);
             pr.setInt(2,price);
-            pr.executeQuery();
+            pr.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
-        }finally{
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally{
             try {
                 if(pr!=null){
                 pr.close();}

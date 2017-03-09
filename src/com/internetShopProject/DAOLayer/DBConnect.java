@@ -19,7 +19,7 @@ public class DBConnect {
 
     private static Logger log = Logger.getLogger(DBConnect.class.getName());
 
-            private static final String URL="jdbc:<yourDB>://localhost:5432/Goods";
+    private static final String URL="jdbc:postgresql://localhost:5432/goods";
     private static final String login="postgres";
     private static final String password="1723";
 

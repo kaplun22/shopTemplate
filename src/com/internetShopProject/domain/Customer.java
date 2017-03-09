@@ -9,6 +9,15 @@ public class Customer  {
     public String login;
     public String password;
     public String eMail;
+    public long birthday;
+
+    public long getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(long birthday) {
+        this.birthday = birthday;
+    }
 
     public String geteMail() {
         return eMail;

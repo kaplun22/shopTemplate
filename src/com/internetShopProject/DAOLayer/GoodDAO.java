@@ -4,6 +4,7 @@ import com.internetShopProject.domain.Good;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -47,12 +48,25 @@ public class GoodDAO {
     }
     public static Good getGood(String name,int price){
         Good good = new Good();
+        Connection con = null;
+        ResultSet rSet = null;
         try {
-            Connection con = DBConnect.getConnectionToDB();
+            con = DBConnect.getConnectionToDB();
         } catch (Exception e) {
             e.printStackTrace();
         }
         String sql = "SELECT * FROM \"goods\" WHERE price='"+name+"'";
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            rSet = ps.executeQuery();
+           if(rSet.wasNull()) {
+               while (rSet.next()) {
+
+               }
+           }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
         return good;
 

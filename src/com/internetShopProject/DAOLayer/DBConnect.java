@@ -1,7 +1,7 @@
 package com.internetShopProject.DAOLayer;
 
 import sun.util.logging.resources.logging;
-
+import java.sql.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.logging.Level;
@@ -29,7 +29,7 @@ public class DBConnect {
         Connection connection = null;
 
         try{
-            Class.forName("postgresql-42.0.0.jar");
+            Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection(URL, login, password);
             if(connection!=null){
                 System.out.println("Connected");

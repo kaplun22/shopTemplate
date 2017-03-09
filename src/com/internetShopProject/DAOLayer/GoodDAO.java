@@ -1,5 +1,7 @@
 package com.internetShopProject.DAOLayer;
 
+import com.internetShopProject.domain.Good;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -18,7 +20,7 @@ public class GoodDAO {
         try {
            con =  DBConnect.getConnectionToDB();
 
-        String sql = "INSERT INTO goods (name, price) VALUES(?,?)";
+        String sql = "INSERT INTO \"goods\" (name, price) VALUES(?,?)";
             pr = con.prepareStatement(sql);
             pr.setString(1,name);
             pr.setInt(2,price);
@@ -41,6 +43,18 @@ public class GoodDAO {
         }
 
 
+
+    }
+    public static Good getGood(String name,int price){
+        Good good = new Good();
+        try {
+            Connection con = DBConnect.getConnectionToDB();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        String sql = "SELECT * FROM \"goods\" WHERE price='"+name+"'";
+
+        return good;
 
     }
 

@@ -19,7 +19,7 @@ public class DBConnect {
 
     private static Logger log = Logger.getLogger(DBConnect.class.getName());
 
-    private static final String URL="jdbc:postgresql://localhost:5432/goods";
+    private static final String URL="jdbc:postgresql://localhost:5432/postgres";
     private static final String login="postgres";
     private static final String password="1723";
 
@@ -32,6 +32,7 @@ public class DBConnect {
             Class.forName("postgresql-42.0.0.jar");
             connection = DriverManager.getConnection(URL, login, password);
             if(connection!=null){
+                System.out.println("Connected");
                 return connection;
             }else{
                 throw new Exception("Connection is not established!");

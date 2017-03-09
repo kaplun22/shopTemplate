@@ -9,6 +9,6 @@ public class Main {
 Good good = new Good();
         good.setName("GTX 1080");
         good.setPrice(15000);
-        GoodDAO.create(good.getName(),good.getPrice());
+        GoodDAO.create("gtx 1080",15000);
     }
 }
